@@ -1,4 +1,5 @@
 import pandas as pd
+from openoa.utils.entr.connection import PysparkEntrConnection
 
 ### Multi-Plant AEP Map
 

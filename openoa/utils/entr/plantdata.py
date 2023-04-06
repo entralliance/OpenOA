@@ -1,7 +1,7 @@
 from openoa.utils import met_data_processing as met
 from openoa.utils import unit_conversion as un
 from openoa import PlantData
-from connection import EntrConnection
+from openoa.utils.entr.connection import EntrConnection, PySparkEntrConnection
 from time import perf_counter
 import pandas as pd
 
@@ -350,18 +350,18 @@ def from_entr(
     tic = perf_counter()
 
     if connection is None:
-        connection = entr.PySparkEntrConnection()
+        connection = PySparkEntrConnection()
 
     toc = perf_counter()
     print(f"{toc-tic} sec\tENTR Connection obtained")
 
     tic = perf_counter()
-    plant_metadata = entr.load_metadata(connection, plant_name)
-    asset_df, asset_metadata = entr.load_asset(connection, plant_metadata)
-    scada_df, scada_metadata = entr.load_scada(connection, plant_metadata)
-    curtail_df, curtail_metadata = entr.load_curtailment(connection, plant_metadata)
-    meter_df, meter_metadata = entr.load_meter(connection, plant_metadata)
-    reanalysis_df_dict, reanalysis_metadata_dict = entr.load_reanalysis(connection, plant_metadata, reanalysis_products)
+    plant_metadata = load_metadata(connection, plant_name)
+    asset_df, asset_metadata = load_asset(connection, plant_metadata)
+    scada_df, scada_metadata = load_scada(connection, plant_metadata)
+    curtail_df, curtail_metadata = load_curtailment(connection, plant_metadata)
+    meter_df, meter_metadata = load_meter(connection, plant_metadata)
+    reanalysis_df_dict, reanalysis_metadata_dict = load_reanalysis(connection, plant_metadata, reanalysis_products)
     toc = perf_counter()
     print(f"{toc-tic} sec\tData loaded from Warehouse into Python")
 

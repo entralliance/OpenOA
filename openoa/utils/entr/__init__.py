@@ -37,8 +37,4 @@ Most functions in this file follow a pattern:
 In some cases, check_metadata_row is called to assert properties about a table's metadata.
 """
 
-from connection import PyHiveEntrConnection, PySparkEntrConnection
-from plantdata import from_entr
-from udf import aep_spark_map
-
 

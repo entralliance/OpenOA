@@ -19,7 +19,6 @@ from shapely.geometry import Point
 
 import openoa.utils.timeseries as ts
 import openoa.utils.met_data_processing as met
-import openoa.utils.entr as entr
 from openoa.utils.metadata_fetch import attach_eia_data
 from openoa.utils.unit_conversion import convert_power_to_energy
 
@@ -1800,14 +1799,15 @@ class PlantData:
             self.calculate_nearest_neighbor()
         return self.asset.loc[id, "nearest_tower_id"].values[0]
 
+    @classmethod
+    def from_entr(cls, *args, **kwargs):
+        from openoa.utils.entr.plantdata import from_entr
+        return from_entr(cls, *args, **kwargs)
+
 
 # **********************************************************
 # Define additional class methods for custom loading methods
 # **********************************************************
-
-# Attach the entr openoa constructor to PlantData as a class method. This provides "PlantData.from_entr"
-from openoa.utils.entr import from_entr
-setattr(PlantData, "from_entr", classmethod(from_entr))
 
 # TODO: Document this
 setattr(PlantData, "attach_eia_data", attach_eia_data)
