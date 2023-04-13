@@ -1224,7 +1224,7 @@ class PlantData:
 
         if self.scada is not None:
             self._calculate_turbine_energy()
-        
+
         # Change the column names to the -25 convention for easier use in the rest of the code base
         self.update_column_names()
 
@@ -1610,6 +1610,10 @@ class PlantData:
             return
         reanalysis = {}
         for name, df in self.reanalysis.items():
+
+            if df is None:
+                continue
+
             col_map = self.metadata.reanalysis[name].col_map
             u = col_map["WMETR_HorWdSpdU"]
             v = col_map["WMETR_HorWdSpdV"]
@@ -2053,6 +2057,7 @@ class PlantData:
     @classmethod
     def from_entr(cls, *args, **kwargs):
         from openoa.utils.entr.plantdata import from_entr
+
         return from_entr(cls, *args, **kwargs)
 
 
