@@ -16,7 +16,6 @@ REQUIRED = [
     "pyproj>=3.3",
     "shapely>=1.7.1",
     "numpy==1.22.3",
-    "attrs==20.3.0",
     "pandas>=0.23.4,<1.5",
     "pygam>=0.8.0",
     "scipy>=1.1.0",
@@ -24,7 +23,7 @@ REQUIRED = [
     "tqdm>=4.28.1",
     "matplotlib>=3.6",
     "bokeh>=2.3",
-    "attrs>=22",
+    "attrs>=22,<23.0",
     "pytz",
     "pyyaml",
 ]
