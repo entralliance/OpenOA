@@ -16,6 +16,7 @@ REQUIRED = [
     "pyproj>=3.3",
     "shapely>=1.7.1",
     "numpy==1.22.3",
+    "attrs==20.3.0",
     "pandas>=0.23.4,<1.5",
     "pygam>=0.8.0",
     "scipy>=1.1.0",
