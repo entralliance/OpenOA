@@ -9,7 +9,7 @@ from functools import cached_property
 from time import perf_counter
 
 import yaml
-import attrs
+import attr
 import numpy as np
 import pandas as pd
 import pyspark as spark
