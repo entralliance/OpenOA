@@ -13,7 +13,7 @@ import attrs
 import numpy as np
 import pandas as pd
 import pyspark as spark
-from attrs import field, define
+from attr import field, define
 from pyproj import Transformer
 from shapely.geometry import Point
 
