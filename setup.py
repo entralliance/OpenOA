@@ -16,7 +16,7 @@ REQUIRED = [
     "pyproj>=3.3",
     "shapely>=1.7.1",
     "numpy>=1.15.4",
-    "pandas>=0.23.4,<1.3",
+    "pandas>=0.23.4,<1.5",
     "pygam>=0.8.0",
     "scipy>=1.1.0",
     "statsmodels>=0.11",
@@ -32,7 +32,7 @@ TESTS = ["pytest>=5.4.2", "pytest-cov>=2.8.1"]
 
 EXTRAS = {
     "docs": [
-        "ipython==8.5.*",
+        "ipython>=7.32.0",
         "m2r2>=0.3",
         "Sphinx>=5.0",
         "pydata-sphinx-theme==0.10.*",
