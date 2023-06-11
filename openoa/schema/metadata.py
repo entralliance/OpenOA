@@ -69,6 +69,7 @@ ANALYSIS_REQUIREMENTS = {
             "columns": ["WMETR_HorWdSpd", "WMETR_HorWdDir"],
             "freq": _at_least_hourly,
         },
+        "asset": {"columns": [],  "freq": None,},
     },
     "StaticYawMisalignment": {
         "scada": {
@@ -81,7 +82,7 @@ ANALYSIS_REQUIREMENTS = {
             ],
             "freq": _at_least_hourly,
         },
-        "asset": {"columns": []},
+        "asset": {"columns": [],  "freq": None,},
     },
 }
 
